@@ -3,6 +3,7 @@ import SearchSection from '@/components/SearchSection'
 import { ICountryDetails } from '@/typings'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import axios from "axios"
 
 
 export interface ICountriesDetailsProps {
