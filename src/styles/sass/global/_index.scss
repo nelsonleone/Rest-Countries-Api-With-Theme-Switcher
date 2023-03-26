@@ -1,0 +1,55 @@
+@forward './theme';
+@use '../utils/' as *;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*,
+*::before,
+*::after{
+   box-sizing: border-box;
+}
+
+html,
+body{
+   padding:0;
+   margin:0;
+}
+
+body{
+   font-family: $font-family;
+   background: var(--bg-color);
+   height:100%;
+}
+
+img{
+   max-width: 100%;
+   object-fit: cover;
+}
+
+button,
+input,
+select{
+ font-family:inherit;
+ background:none;
+ border:none;
+ cursor: pointer;
+
+ &:hover,
+ &:focus{
+   outline:none;
+   border:none;
+ }
+}
+
+li,
+a{
+   text-decoration: none;
+   list-style-type:none;
+}
+
+main{
+   max-width:90%;
+   margin:auto;
+   @include MediaQueryMD2{
+      max-width:94%;
+   }
+}
