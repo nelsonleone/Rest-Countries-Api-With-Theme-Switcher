@@ -27,16 +27,15 @@ export default function Home(props:ICountriesDetailsProps) {
 
 export const getStaticProps:GetStaticProps = async () => {
 
-  const apiUrl = process.env.NODE_ENV === "development" ? 
-  "http://localhost:3000" :
-  "";
+  const URL = 'https://restcountries.com/v3.1/all'
 
   try{
-    const response = await fetch(`${apiUrl}/api/getCountries?limit=50`)
-    const countriesData = await response.json()
+    const response = await axios.get(URL)
+    const data = await response.data
+    const slicedData = data.slice(0,Number(50))
     return{
       props: {
-        countriesData
+        countriesData: slicedData
       }
     }
   }
