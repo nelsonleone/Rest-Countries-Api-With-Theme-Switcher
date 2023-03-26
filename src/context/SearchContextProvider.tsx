@@ -41,7 +41,7 @@ export default function SearchContextProvider(props:Props){
    useEffect(() => {
       const apiUrl = process.env.NODE_ENV === "development" ? 
       "http://localhost:3000" :
-      "https://restcountries.com/v3.1/all";
+      "https://rest-countries-api-with-theme-switcher-nelsonleone.vercel.app";
 
       const setSearchApiFetch = async (value:string) => {
          try{
@@ -65,7 +65,7 @@ export default function SearchContextProvider(props:Props){
    useEffect(() => {
       const apiUrl = process.env.NODE_ENV === "development" ? 
       "http://localhost:3000" :
-      "https://restcountries.com/v3.1/all";
+      "https://rest-countries-api-with-theme-switcher-nelsonleone.vercel.app";
 
       const setFilterApiFetch = async (filter:string) => {
          try{
