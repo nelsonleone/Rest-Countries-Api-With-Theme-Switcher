@@ -29,7 +29,7 @@ export const getServerSideProps:GetServerSideProps = async () => {
 
   const apiUrl = process.env.NODE_ENV === "development" ? 
   "http://localhost:3000" :
-  "https://restcountries.com/v3.1/all";
+  "http://localhost:3000";
 
   try{
     const response = await fetch(`${apiUrl}/api/getCountries?limit=50`)

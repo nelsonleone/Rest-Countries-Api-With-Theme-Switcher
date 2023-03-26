@@ -102,7 +102,7 @@ export const getStaticPaths:GetStaticPaths = async () => {
 
    const apiUrl = process.env.NODE_ENV === "development" ? 
    "http://localhost:3000" :
-   "https://restcountries.com/v3.1/all";
+   "http://localhost:3000";
 
    const res = await axios.get(`${apiUrl}/api/getCountries`)
    const countriesData = await res.data;
