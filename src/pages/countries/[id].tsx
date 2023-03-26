@@ -100,9 +100,10 @@ export default function CountryOverview({ countryData, borderCountries , error }
 
 export const getStaticPaths:GetStaticPaths = async () => {
 
+
    const apiUrl = process.env.NODE_ENV === "development" ? 
    "http://localhost:3000" :
-   "http://localhost:3000";
+   "";
 
    const res = await axios.get(`${apiUrl}/api/getCountries`)
    const countriesData = await res.data;

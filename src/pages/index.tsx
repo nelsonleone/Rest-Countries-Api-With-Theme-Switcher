@@ -1,7 +1,7 @@
 import Countries from '@/components/Countries'
 import SearchSection from '@/components/SearchSection'
 import { ICountryDetails } from '@/typings'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
 
@@ -25,11 +25,11 @@ export default function Home(props:ICountriesDetailsProps) {
 }
 
 
-export const getServerSideProps:GetServerSideProps = async () => {
+export const getStaticProps:GetStaticProps = async () => {
 
   const apiUrl = process.env.NODE_ENV === "development" ? 
   "http://localhost:3000" :
-  "http://localhost:3000";
+  "";
 
   try{
     const response = await fetch(`${apiUrl}/api/getCountries?limit=50`)

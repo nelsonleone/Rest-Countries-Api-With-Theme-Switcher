@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse){
 
    try{
       const response = await axios.get(URL)
-      const data = response.data
+      const data = await response.data
       const slicedData = data.slice(0,Number(limit))
       res.status(200).json(limit ? slicedData : data)
    }catch(err){
