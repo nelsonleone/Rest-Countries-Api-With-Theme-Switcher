@@ -102,7 +102,7 @@ export const getStaticPaths:GetStaticPaths = async () => {
 
 
    const URL = 'https://restcountries.com/v3.1/all'
-   const res = await axios.get(`${URL}/api/getCountries`)
+   const res = await axios.get(URL)
    const countriesData = await res.data;
    const paths = countriesData.map((data:ICountryDetails) => {
       return {params:{id:data.name.official}}
