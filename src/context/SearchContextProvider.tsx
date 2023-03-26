@@ -39,6 +39,7 @@ export default function SearchContextProvider(props:Props){
 
 
    useEffect(() => {
+      if(!searchState.inputValue)return;
       const apiUrl = process.env.NODE_ENV === "development" ? 
       "http://localhost:3000" :
       "https://rest-countries-api-with-theme-switcher-nelsonleone.vercel.app";
@@ -82,7 +83,9 @@ export default function SearchContextProvider(props:Props){
          }
       }
 
-      setFilterApiFetch(searchState.selectedFilter)
+      if(searchState.selectedFilter){
+         setFilterApiFetch(searchState.selectedFilter)
+      }
       
    },[searchState.selectedFilter])
 
