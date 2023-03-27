@@ -123,7 +123,7 @@ export const getStaticProps:GetStaticProps = async(context) => {
       const { borders } = countryData;
 
       // getting the full name of the countries in borders array 
-      const borderCountries = await Promise.all(
+      const borderCountries = borders && borders.length > 0 ? await Promise.all(
         borders.map(async (border:string[]) => {
           const borderRes = await fetch(
             `https://restcountries.com/v3.1/alpha/${border}`
@@ -132,6 +132,8 @@ export const getStaticProps:GetStaticProps = async(context) => {
           return {commonBorderName:borderData.name.common,officialBorderName:borderData.name.official};
         })
       )
+      :
+      []
 
       return{
          props: {
