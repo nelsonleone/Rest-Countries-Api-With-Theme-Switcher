@@ -20,7 +20,7 @@ export default function Country({ CountryDetails }: { CountryDetails : ICountryD
    return(
       <Link href={`/countries/${official}`}>
          <div className="country-item">
-            <img src={flags.svg} alt={flags.alt}  /> 
+            <img src={flags.svg} alt={flags.alt ? flags.alt : "country flag"}  /> 
             <div className="details-container">
                <h2>{common}</h2>
                <p>Population: <span>{population && population}</span></p>
