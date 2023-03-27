@@ -59,7 +59,7 @@ export default function CountryOverview({ countryData, borderCountries , error }
                <div className="flex-row">
                   <div>
                      <h2>{name.common}</h2>
-                     <p>Native Name: <span>{(name.nativeName as INativeName)[dynamicNativeNameObjectKey].common}</span></p>
+                     <p>Native Name: <span>{name.nativeName ? (name.nativeName as INativeName)[dynamicNativeNameObjectKey].common : ""}</span></p>
                      <p>Population: <span>{population && population}</span></p>
                      <p>Region: <span>{region && region}</span></p>
                      <p>Sub Region: <span>{subregion && subregion}</span></p>
@@ -85,10 +85,12 @@ export default function CountryOverview({ countryData, borderCountries , error }
                      <h3>Border Countries:</h3>
                      <div>
                      {
-                        borderCountries.length &&
+                        borderCountries && borderCountries.length ?
                         borderCountries.map((border,index) => {
                            return <Link key={index} href={`/countries/${border.officialBorderName}`}>{border.commonBorderName}</Link>
                         })
+                        :
+                        ""
                      }
                      </div>
                   </div>
