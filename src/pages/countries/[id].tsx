@@ -19,7 +19,7 @@ type Props = {
    ]
 }
 
-function CountryOverview({ countryData, borderCountries , error }:Props){
+export default function CountryOverview({ countryData, borderCountries , error }:Props){
 
    if(error){
       return <p>{error}</p>
