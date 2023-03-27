@@ -90,7 +90,7 @@ export default function CountryOverview({ countryData, borderCountries , error }
                            return <Link key={index} href={`/countries/${border.officialBorderName}`}>{border.commonBorderName}</Link>
                         })
                         :
-                        ""
+                        "There are no Border Countries"
                      }
                      </div>
                   </div>
