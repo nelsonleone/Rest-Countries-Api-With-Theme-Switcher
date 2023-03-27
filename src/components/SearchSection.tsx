@@ -45,7 +45,6 @@ export default function  SearchSection(){
          {/* custom select dropdown */}
          <div 
             className="search-area-dropdown" 
-            role="listbox" 
             aria-haspopup="listbox" 
             aria-expanded={openDropdown} 
             aria-owns="dropdown"
