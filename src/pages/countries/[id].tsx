@@ -55,7 +55,7 @@ export default function CountryOverview({ countryData, borderCountries , error }
                Back
             </Link>
             <div className="overview">
-               <Image src={flags.svg} width={330} height={280} alt={flags.alt} />
+               <Image src={flags.svg} width={330} height={280} alt={flags.alt ? flags.alt : "country flag"} />
                <div className="flex-row">
                   <div>
                      <h2>{name.common}</h2>
