@@ -85,6 +85,7 @@ export default function CountryOverview({ countryData, borderCountries , error }
                      <h3>Border Countries:</h3>
                      <div>
                      {
+                        borderCountries.length &&
                         borderCountries.map((border,index) => {
                            return <Link key={index} href={`/countries/${border.officialBorderName}`}>{border.commonBorderName}</Link>
                         })
