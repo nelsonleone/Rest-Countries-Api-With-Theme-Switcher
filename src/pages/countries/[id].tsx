@@ -72,12 +72,12 @@ export default function CountryOverview({ countryData, borderCountries , error }
                      </p>
                      <p>
                         Currencies:
-                           <span>{(currencies as ICurrency)[dynamicCurrenciesObjectKey].name}</span>
+                           <span>{dynamicCurrenciesObjectKey ? (currencies as ICurrency)[dynamicCurrenciesObjectKey].name : ""}</span>
                      </p>
 
                      <p>
                         Languages:
-                        <span>{languages[dynamicLanguagesObjectKey]}</span>
+                        <span>{dynamicLanguagesObjectKey ? languages[dynamicLanguagesObjectKey] : ""}</span>
                      </p>
                   </div>
 
