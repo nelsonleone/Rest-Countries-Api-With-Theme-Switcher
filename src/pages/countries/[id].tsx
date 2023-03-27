@@ -40,9 +40,9 @@ export default function CountryOverview({ countryData, borderCountries , error }
    } = countryData;
 
    // accessing the key property of the object values
-   const dynamicNativeNameObjectKey = Object.keys(name.nativeName)[0]
-   const dynamicCurrenciesObjectKey = Object.keys(currencies)[0]
-   const dynamicLanguagesObjectKey = Object.keys(languages)[0]
+   const dynamicNativeNameObjectKey = name.nativeName && Object.keys(name.nativeName)[0]
+   const dynamicCurrenciesObjectKey = currencies && Object.keys(currencies)[0]
+   const dynamicLanguagesObjectKey = languages && Object.keys(languages)[0]
 
    return(
       <>
@@ -139,7 +139,7 @@ export const getStaticProps:GetStaticProps = async(context) => {
       return{
          props: {
             borderCountries,
-            countryData: countryData
+            countryData
          }
       }
    }
