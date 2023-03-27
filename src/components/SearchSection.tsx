@@ -47,7 +47,7 @@ export default function  SearchSection(){
             className="search-area-dropdown" 
             aria-expanded={openDropdown} 
             onClick={() => setOpenDropdown(!openDropdown)}
-            aria-owns="dropdwon"
+            aria-owns="dropdown"
             >
             <span id="regionDropdown">{chosenFilter ? chosenFilter : "Filter by Region"}</span>
            
