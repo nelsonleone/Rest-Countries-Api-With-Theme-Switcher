@@ -47,7 +47,6 @@ export default function  SearchSection(){
             className="search-area-dropdown" 
             aria-haspopup="listbox" 
             aria-expanded={openDropdown} 
-            aria-owns="dropdown"
             onClick={() => setOpenDropdown(!openDropdown)}
             aria-controls='dropdown'
             >
