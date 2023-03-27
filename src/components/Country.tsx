@@ -23,9 +23,9 @@ export default function Country({ CountryDetails }: { CountryDetails : ICountryD
             <img src={flags.svg} alt={flags.alt}  /> 
             <div className="details-container">
                <h2>{common}</h2>
-               <p>Population: <span>{population}</span></p>
-               <p>Region: <span>{region}</span></p>
-               <p>Capital: <span>{capital}</span></p>
+               <p>Population: <span>{population && population}</span></p>
+               <p>Region: <span>{region && region}</span></p>
+               <p>Capital: <span>{capital && capital}</span></p>
             </div>
          </div>
       </Link>

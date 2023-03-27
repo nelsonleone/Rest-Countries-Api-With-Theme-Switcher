@@ -19,7 +19,7 @@ type Props = {
    ]
 }
 
-export default function CountryOverview({ countryData, borderCountries , error }:Props){
+function CountryOverview({ countryData, borderCountries , error }:Props){
 
    if(error){
       return <p>{error}</p>
@@ -60,15 +60,15 @@ export default function CountryOverview({ countryData, borderCountries , error }
                   <div>
                      <h2>{name.common}</h2>
                      <p>Native Name: <span>{(name.nativeName as INativeName)[dynamicNativeNameObjectKey].common}</span></p>
-                     <p>Population: <span>{population}</span></p>
-                     <p>Region: <span>{region}</span></p>
-                     <p>Sub Region: <span>{subregion}</span></p>
-                     <p>Capital: <span>{capital}</span></p>
+                     <p>Population: <span>{population && population}</span></p>
+                     <p>Region: <span>{region && region}</span></p>
+                     <p>Sub Region: <span>{subregion && subregion}</span></p>
+                     <p>Capital: <span>{capital && capital}</span></p>
                   </div>
 
                   <div>
                      <p>
-                        Top Level Domain: <span>{tld}</span>
+                        Top Level Domain: <span>{tld && tld}</span>
                      </p>
                      <p>
                         Currencies:
