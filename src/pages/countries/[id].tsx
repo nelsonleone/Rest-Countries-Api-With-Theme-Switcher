@@ -41,7 +41,7 @@ export default function CountryOverview({ countryData, borderCountries , error }
 
    function handleGoBack() {
       if (typeof window !== 'undefined') {
-        window.history.back()
+         window.location.replace(document.referrer)
       } else {
         router.back()
       }
