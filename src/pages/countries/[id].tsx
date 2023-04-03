@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next"
 import axios from "axios"
 import { ICountryDetails, ICurrency, ILanguages, IName, INativeName } from "@/typings";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import { BsArrowLeft } from "react-icons/bs";
 import Head from "next/head";
@@ -23,7 +24,8 @@ export default function CountryOverview({ countryData, borderCountries , error }
    if(error){
       return <p>{error}</p>
    }
-
+   
+   const router = useRouter()
    const {
       name,
       flags,
