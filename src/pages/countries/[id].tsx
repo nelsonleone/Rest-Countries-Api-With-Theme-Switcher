@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from "next"
 import axios from "axios"
 import { ICountryDetails, ICurrency, ILanguages, IName, INativeName } from "@/typings";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import Image from "next/image";
 import { BsArrowLeft } from "react-icons/bs";
 import Head from "next/head";
@@ -24,8 +23,7 @@ export default function CountryOverview({ countryData, borderCountries , error }
    if(error){
       return <p>{error}</p>
    }
-   
-   const router = useRouter()
+
    const {
       name,
       flags,
@@ -39,6 +37,14 @@ export default function CountryOverview({ countryData, borderCountries , error }
       borders
    } = countryData;
 
+   function handleGoBack() {
+      if (typeof window !== 'undefined') {
+        window.history.back()
+      } else {
+        router.back()
+      }
+   }
+
    // accessing the key property of the object values
    const dynamicNativeNameObjectKey = name.nativeName && Object.keys(name.nativeName)[0]
    const dynamicCurrenciesObjectKey = currencies && Object.keys(currencies)[0]
@@ -50,7 +56,7 @@ export default function CountryOverview({ countryData, borderCountries , error }
            <title>{name.official}</title>
          </Head>
          <div className="country-details-overview">
-            <Link href="#" onClick={() => router.back()} className="go-back">
+            <Link href="#" onClick={handleGoBack} className="go-back">
                <BsArrowLeft />
                Back
             </Link>
