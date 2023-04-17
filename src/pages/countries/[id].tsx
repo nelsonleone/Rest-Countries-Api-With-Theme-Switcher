@@ -50,10 +50,10 @@ export default function CountryOverview({ countryData, borderCountries , error }
            <title>{name.official}</title>
          </Head>
          <div className="country-details-overview">
-            <Link href="#" onClick={() => router.back()} className="go-back">
+            <button onClick={() => router.back()} className="go-back">
                <BsArrowLeft />
                Back
-            </Link>
+            </button>
             <div className="overview">
                <Image src={flags.svg} width={330} height={280} alt={flags.alt ? flags.alt : "country flag"} />
                <div className="flex-row">
