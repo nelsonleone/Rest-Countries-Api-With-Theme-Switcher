@@ -142,7 +142,8 @@ export const getStaticProps:GetStaticProps = async(context) => {
          props: {
             borderCountries,
             countryData
-         }
+         },
+         revalidate: 1,
       }
    }
    catch(err){
